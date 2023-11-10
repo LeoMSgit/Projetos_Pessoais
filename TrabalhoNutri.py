@@ -30,3 +30,6 @@ elif Animal == 2:
         print('Peso Meta: {} Kg'.format(PMGato))
     else:
         print('Opção Inválida')
+
+else:
+    print('Opção Inválida')
