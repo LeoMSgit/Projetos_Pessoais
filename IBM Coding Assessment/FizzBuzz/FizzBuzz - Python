@@ -9,6 +9,7 @@ def fizzBuzz(n):
         else:
             print(i)
 
-# Input from stdin
-n = int(input("Enter the upper limit: "))
-fizzBuzz(n)
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    fizzBuzz(n)
