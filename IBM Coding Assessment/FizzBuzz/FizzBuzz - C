@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-void fizzBuzz(int n) {
+int main() {
+    int n;
+    printf("Enter the upper limit: ");
+    scanf("%d", &n);
+
     for (int i = 1; i <= n; i++) {
         if (i % 3 == 0 && i % 5 == 0) {
             printf("FizzBuzz\n");
@@ -12,12 +16,4 @@ void fizzBuzz(int n) {
             printf("%d\n", i);
         }
     }
-}
-
-int main() {
-    int n;
-    printf("Enter the upper limit: ");
-    scanf("%d", &n);
-
-    fizzBuzz(n);
 }
