@@ -11,8 +11,7 @@ fizzBuzz has the following parameter(s):__
     int n:  upper limit of values to test (inclusive)__
 Returns:    NONE__
 Prints:__
-    The function must print the appropriate response for each value i in the set {1, 2, ... n} in ascending order, each on a separate line.__
-__    
+    The function must print the appropriate response for each value i in the set {1, 2, ... n} in ascending order, each on a separate line.__  
 Constraints__
 0 < n < 2 × 10^5__
 __
