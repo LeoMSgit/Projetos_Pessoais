@@ -16,8 +16,6 @@ Constraints<br />
 0 < n < 2 × 10^5<br />
 <br />
 Input Format for Custom Testing<br />
-Sample Case 0<br />
 <br />
-Sample Input<br />
-STDIN Function<br />
-15 → n = 15
+Input from stdin will be processed as follows and passed to the function<br />
+The single integer n, the limit of the range to test: [1, 2, ... n]
