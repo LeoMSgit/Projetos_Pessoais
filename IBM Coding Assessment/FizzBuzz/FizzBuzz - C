@@ -41,7 +41,6 @@ void fizzBuzz(int n) {
 
 int main() {
     int n;
-    printf("Enter the upper limit: ");
     scanf("%d", &n);
 
     fizzBuzz(n);
