@@ -1,7 +1,7 @@
 Rainha<br />
 O jogo de Xadrez possui diversas peças com movimentos curiosos. Uma delas é a Rainha, que pode se mover qualquer número de casas em qualquer direção: na mesma linha, na mesma coluna ou em qualquer uma das diagonais, conforme ilustrado na figura abaixo (os pontos pretos representam as posições que a rainha pode alcançar):<br />
 
-https://456c997f.widgets.sphere-engine.com/files/problems/TECHFELLOW_24_Q3/uoj-1087.webp<br /><br />
+![alt text](https://456c997f.widgets.sphere-engine.com/files/problems/TECHFELLOW_24_Q3/uoj-1087.webp)<br /><br />
 O grande mestre de xadrez Gary Carakov inventou um novo tipo de problema de xadrez: dada a posição de uma rainha em um tabuleiro de xadrez padrão vazio (ou seja, um tabuleiro de 8 x 8), quantos movimentos são necessários para que ela chegue a outra casa dada no quadro?<br />
 <br />
 Gary encontrou a solução para alguns desses problemas, mas está tendo dificuldades para resolver alguns outros e, portanto, pediu que você escrevesse um programa para resolver esse tipo de problema.<br />
