@@ -7,8 +7,11 @@ def calcular_polinomio(coeficientes, x):
 
 def obter_coeficientes():
     while True:
+        entrada = input("Digite o grau do polinômio ou EXIT para SAIR: ")
+        if entrada.lower() == 'exit':
+            return None
         try:
-            grau = int(input("Digite o grau do polinômio: "))
+            grau = int(entrada)
             if grau < 0:
                 print("O grau do polinômio deve ser um número inteiro não negativo.")
                 continue
@@ -40,23 +43,28 @@ def imprimir_funcao(coeficientes):
     print(funcao)
 
 def main():
-    print("Bem-vindo à Calculadora de Polinômios")
-    print("--------------------------------------")
-    coeficientes = obter_coeficientes()
-    imprimir_funcao(coeficientes)
     while True:
-        opcao = input("Esta é a função que você deseja calcular? (s/n): ").lower()
-        if opcao in ['s', 'n']:
+        print("Bem-vindo à Calculadora de Polinômios")
+        print("--------------------------------------")
+        coeficientes = obter_coeficientes()
+        if coeficientes is None:
+            print("Saindo...")
             break
+        imprimir_funcao(coeficientes)
+        while True:
+            opcao = input("Deseja calcular o polinômio? (s/n): ").lower()
+            if opcao in ['s', 'n']:
+                break
+            else:
+                print("Opção inválida. Por favor, digite 's' para sim ou 'n' para não.")
+
+        if opcao == "s":
+            x = float(input("Digite o valor de x para calcular o polinômio: "))
+            resultado = calcular_polinomio(coeficientes, x)
+            print("O resultado para x = {} é: {}".format(x, resultado))
         else:
-            print("Opção inválida. Por favor, digite 's' para sim ou 'n' para não.")
-
-    if opcao == "s":
-        x = float(input("Digite o valor de x para calcular o polinômio: "))
-        resultado = calcular_polinomio(coeficientes, x)
-        print("O resultado para x = {} é: {}".format(x, resultado))
-    else:
-        print("Operação cancelada.")
-
+            print("Operação cancelada... retornando para o Menu")
+            print()
+            print()
 if __name__ == "__main__":
     main()
