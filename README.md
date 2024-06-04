@@ -1,2 +1,2 @@
 # ProjetosPessoais
-Projetos Pessoas para Faculdade ou Outros
+Projetos de Desafio Pessoal ou Processos Seletivos
