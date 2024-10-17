@@ -98,4 +98,4 @@ ws.column_dimensions['A'].width = 20
 # Salvar o arquivo novamente após ajustar a largura da coluna
 wb.save(nome_arquivo_excel)
 
-print(f"Arquivo Excel '{nome_arquivo_excel}' gerado com sucesso, com a coluna A ajustada para 187 pixels!")
+print(f"Arquivo Excel '{nome_arquivo_excel}' gerado com sucesso!")
