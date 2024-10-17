@@ -57,7 +57,7 @@ O **PDF to Excel Data Extractor** é uma ferramenta que extrai automaticamente v
 ---
 
 ## **Apoio Técnico**
-Se houver qualquer dúvida ou problema com o programa, entre em contato com o suporte técnico através do e-mail **suporte@exemplo.com**.
+Se houver qualquer dúvida ou problema com o programa, entre em contato com o suporte técnico através do e-mail **leoms-98@hotmail.com** ou no GitHub em **@leomsgit**.
 
 ---
 
