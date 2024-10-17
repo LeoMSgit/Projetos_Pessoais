@@ -1,4 +1,4 @@
-# **PDF to Excel Data Extractor**
+# **Extrator de Parâmetros Análise Bioquimica**
 
 ## **Descrição**
 O **PDF to Excel Data Extractor** é uma ferramenta que extrai automaticamente valores de exames laboratoriais de arquivos PDF e os organiza em um arquivo Excel. Ele facilita a coleta de dados de PDFs e apresenta os resultados em um formato organizado, pronto para ser usado.
@@ -54,6 +54,8 @@ O **PDF to Excel Data Extractor** é uma ferramenta que extrai automaticamente v
 2. **PDFs fora do padrão:**
    - Se os arquivos PDF não seguirem o formato esperado, alguns parâmetros podem não ser corretamente identificados. Verifique se os PDFs têm a estrutura correta antes de processá-los.
 
+3. **Outros arquivos .pdf na pasta**
+   - Caso existam outros arquivos .pdf na pasta que não sigam o padrão estipulado nesse manual, seus nomes serão impressos no arquivo Excel, porém não terão dados atrelados a eles.
 ---
 
 ## **Apoio Técnico**
