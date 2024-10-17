@@ -29,7 +29,35 @@ O **Extrator de Parâmetros Análise Bioquimica** é uma ferramenta que extrai a
 5. **Resultado do processamento:**
    - O programa criará um arquivo Excel (`.xlsx`) com o nome da pasta que contém os arquivos PDF.
    - O arquivo Excel terá os seguintes campos:
-     - **Coluna A:** Lista de parâmetros de exames (ex.: ERITROCITOS, HEMOGLOBINA, etc.).
+     - **Coluna A:** Lista de parâmetros de exames
+         - A versão atual do **Extrator de Parâmetros Análise Bioquimica** suporta a extração dos seguintes parâmetros dos arquivos PDF:
+
+- ERITROCITOS
+- HEMOGLOBINA
+- HEMATÓCRITO
+- V.C.M
+- H.C.M
+- C.H.C.M
+- PLAQUETAS
+- LEUCÓCITOS TOTAIS
+- BASTONETES
+- SEGMENTADOS
+- LINFÓCITOS
+- MONÓCITOS
+- EOSINÓFILOS
+- BASÓFILOS
+- ALBUMINA
+- BILIRRUBINA DIRETA
+- BILIRRUBINA TOTAL
+- CK
+- CREATININA
+- FOSFATASE ALCALINA
+- GGT
+- PROTEINA TOTAL
+- AST
+- ALT
+- UREIA
+- BILIRRUBINA INDIRETA 
      - **Colunas subsequentes:** Para cada PDF processado, uma nova coluna será gerada, contendo os valores extraídos daquele arquivo PDF.
    
    - A célula A1 será chamada de **"PARÂMETROS"** e todas as colunas subsequentes trarão o nome dos arquivos PDF processados (ex.: A1.pdf, A2.pdf, etc.).
