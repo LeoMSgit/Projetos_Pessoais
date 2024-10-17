@@ -11,20 +11,22 @@ O **PDF to Excel Data Extractor** é uma ferramenta que extrai automaticamente v
 
 ---
 
-## **Como Usar**
+## Instruções de Uso
 
-1. **Abra o programa:**
+1. Baixe o executável do software [aqui](https://drive.google.com/file/d/1VjctqKx6uLLO9mJEGICMKQV7XWmVryzQ/view?usp=drive_link).
+
+2. **Abra o programa:**
    - Execute o arquivo `.exe` gerado. Uma janela do console será aberta, solicitando o caminho da pasta com os arquivos PDF.
 
-2. **Insira o caminho da pasta:**
+3. **Insira o caminho completo da pasta:**
    - No campo de entrada do console, insira o caminho completo da pasta onde estão localizados os arquivos PDF.
    - **Exemplo:**  
      `C:\Users\Usuario\Documents\ExamesPDF`
    
-3. **Processamento dos arquivos:**
+4. **Processamento dos arquivos:**
    - O programa irá automaticamente acessar todos os PDFs dentro da pasta especificada, extrair os valores de interesse e organizá-los no formato necessário.
 
-4. **Resultado do processamento:**
+5. **Resultado do processamento:**
    - O programa criará um arquivo Excel (`.xlsx`) com o nome da pasta que contém os arquivos PDF.
    - O arquivo Excel terá os seguintes campos:
      - **Coluna A:** Lista de parâmetros de exames (ex.: ERITROCITOS, HEMOGLOBINA, etc.).
@@ -32,15 +34,12 @@ O **PDF to Excel Data Extractor** é uma ferramenta que extrai automaticamente v
    
    - A célula A1 será chamada de **"PARÂMETROS"** e todas as colunas subsequentes trarão o nome dos arquivos PDF processados (ex.: 12.pdf, 13.pdf, etc.).
 
-5. **Largura da Coluna A:**
-   - A coluna A será automaticamente ajustada para ter 187 pixels de largura, garantindo que os nomes dos parâmetros fiquem bem visíveis.
-
 6. **Finalização:**
-   - Após o processamento, uma mensagem de sucesso será exibida no console:
+   - Após o processamento, uma mensagem de sucesso será exibida no console e ele será encerrado automaticamente:
      - **Exemplo:** `"Arquivo Excel 'NomeDaPasta.xlsx' gerado com sucesso!"`
 
 7. **Localização do arquivo Excel:**
-   - O arquivo Excel será salvo na mesma pasta onde estão os arquivos PDF processados, com o nome da pasta que você especificou.
+   - O arquivo Excel será salvo na mesma pasta onde está o programa executável, sob o nome da pasta que você especificou seguido por _resultados.
 
 ---
 
