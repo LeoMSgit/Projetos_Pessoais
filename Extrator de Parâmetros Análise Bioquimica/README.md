@@ -32,7 +32,10 @@ O **Extrator de Parâmetros Análise Bioquimica** é uma ferramenta que extrai a
      - **Coluna A:** Lista de parâmetros de exames (ex.: ERITROCITOS, HEMOGLOBINA, etc.).
      - **Colunas subsequentes:** Para cada PDF processado, uma nova coluna será gerada, contendo os valores extraídos daquele arquivo PDF.
    
-   - A célula A1 será chamada de **"PARÂMETROS"** e todas as colunas subsequentes trarão o nome dos arquivos PDF processados (ex.: 12.pdf, 13.pdf, etc.).
+   - A célula A1 será chamada de **"PARÂMETROS"** e todas as colunas subsequentes trarão o nome dos arquivos PDF processados (ex.: A1.pdf, A2.pdf, etc.).
+  
+   ![Descrição da Imagem](https://i.imgur.com/YCoevYA.png)
+
 
 6. **Finalização:**
    - Após o processamento, uma mensagem de sucesso será exibida no console e ele será encerrado automaticamente:
