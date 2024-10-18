@@ -13,7 +13,7 @@ O **Extrator de Parâmetros Análise Bioquimica** é uma ferramenta que extrai a
 
 ## Instruções de Uso
 
-1. Baixe o executável do software [aqui](https://drive.google.com/file/d/1VjctqKx6uLLO9mJEGICMKQV7XWmVryzQ/view?usp=drive_link).
+1. Baixe o executável do software [aqui](https://drive.google.com/file/d/1mNV_pVbjemwU5hE9FU-wkUrcsH7ghk-I/view?usp=sharing).
 
 2. **Abra o programa:**
    - Execute o arquivo `.exe` gerado. Uma janela do console será aberta, solicitando o caminho da pasta com os arquivos PDF.
