@@ -13,20 +13,23 @@ O **Extrator de Parâmetros Análise de Hemograma e Bioquímico** é uma ferrame
 
 ## Instruções de Uso
 
-1. Baixe o executável do software [aqui](https://drive.google.com/file/d/1mNV_pVbjemwU5hE9FU-wkUrcsH7ghk-I/view?usp=sharing).
+1. Baixe o arquivo .rar contendo o executável do software [aqui](https://drive.google.com/file/d/1mNV_pVbjemwU5hE9FU-wkUrcsH7ghk-I/view?usp=sharing).
 
-2. **Abra o programa:**
+2. **Extraia o programa:**
+   - Utilize uma ferramente como WinRar para extrair o software.
+
+3. **Abra o programa:**
    - Execute o arquivo `.exe` gerado. Uma janela do console será aberta, solicitando o caminho da pasta com os arquivos PDF.
 
-3. **Insira o caminho completo da pasta:**
+4. **Insira o caminho completo da pasta:**
    - No campo de entrada do console, insira o caminho completo da pasta onde estão localizados os arquivos PDF.
    - **Exemplo:**  
      `C:\Users\Usuario\Documents\ExamesPDF`
    
-4. **Processamento dos arquivos:**
+5. **Processamento dos arquivos:**
    - O programa irá automaticamente acessar todos os PDFs dentro da pasta especificada, extrair os valores de interesse e organizá-los no formato necessário.
 
-5. **Resultado do processamento:**
+6. **Resultado do processamento:**
    - O programa criará um arquivo Excel (`.xlsx`) com o nome da pasta que contém os arquivos PDF.
    - O arquivo Excel terá os seguintes campos:
      - **Coluna A:** Lista de parâmetros de exames
@@ -65,11 +68,11 @@ O **Extrator de Parâmetros Análise de Hemograma e Bioquímico** é uma ferrame
    ![Descrição da Imagem](https://i.imgur.com/YCoevYA.png)
 
 
-6. **Finalização:**
+7. **Finalização:**
    - Após o processamento, uma mensagem de sucesso será exibida no console e ele será encerrado automaticamente:
      - **Exemplo:** `"Arquivo Excel 'NomeDaPasta.xlsx' gerado com sucesso!"`
 
-7. **Localização do arquivo Excel:**
+8. **Localização do arquivo Excel:**
    - O arquivo Excel será salvo na mesma pasta onde está o programa executável, sob o nome da pasta que você especificou seguido por _resultados.
 
 ---
