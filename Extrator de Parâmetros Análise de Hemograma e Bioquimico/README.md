@@ -94,7 +94,7 @@ Se houver qualquer dúvida ou problema com o programa, entre em contato com o su
 ---
 
 ### **Autor**
-Leonardo Miguel dos Santos
+[Leonardo Miguel dos Santos](https://github.com/LeoMSgit)
 
 
 
