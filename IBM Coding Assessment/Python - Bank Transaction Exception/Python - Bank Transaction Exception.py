@@ -103,10 +103,7 @@ class BankAccount:
         
         Returns:
         - str: Formatted transaction history.
-        """
-        if not self.transaction_history:
-            return "No transactions have been made."
-        
+        """        
         history_str = "Transaction History:\n"
         history_str += "\n".join(str(transaction) for transaction in self.transaction_history)
         return history_str
