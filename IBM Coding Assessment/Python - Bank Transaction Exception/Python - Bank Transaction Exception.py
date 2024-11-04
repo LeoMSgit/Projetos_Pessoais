@@ -1,3 +1,21 @@
+#!/bin/python3
+
+import os
+
+#
+# Complete the classes below.
+#
+# Message text for copy and paste:
+#
+# "Insufficient funds"
+# "Invalid transaction type"
+# "Type: {self.transaction_type}, Amount: {self.amount}, Balance: {self.balance}"
+# "Invalid transaction type '{transaction_type}'. Accepted types: deposit, withdraw, view_transaction_history"
+# "Not enough funds to withdraw {transaction_amount}. Current balance: {self.balance}"
+# "Transaction successful!"
+# "Updated account balance: {self.balance}"
+#
+
 class InsufficientFundsError(Exception):
     """Custom exception raised when a withdrawal exceeds the available balance."""
     def __init__(self, transaction_amount, balance):
@@ -56,7 +74,6 @@ class BankAccount:
         - str: Success message or raises an error for insufficient funds or invalid transaction types.
         """
         if transaction_type == "deposit":
-            # Deposit transaction
             if transaction_amount <= 0:
                 raise ValueError("Deposit amount must be positive.")
             
@@ -66,7 +83,6 @@ class BankAccount:
             return f"Transaction successful!\nUpdated account balance: {self.balance}"
 
         elif transaction_type == "withdraw":
-            # Withdraw transaction
             if transaction_amount <= 0:
                 raise ValueError("Withdrawal amount must be positive.")
             
@@ -94,3 +110,30 @@ class BankAccount:
         history_str = "Transaction History:\n"
         history_str += "\n".join(str(transaction) for transaction in self.transaction_history)
         return history_str
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    account = BankAccount(1500.0)
+    no_of_transactions = int(input())
+    
+    while no_of_transactions > 0:
+        try:
+            transaction_type = input().strip()
+            transaction_amount = None
+            if transaction_type == "deposit" or transaction_type == "withdraw":
+                transaction_amount = float(input().strip())
+
+            result = account.process_transaction(transaction_amount, transaction_type)
+            if transaction_type == "view_transaction_history":
+                fptr.write(account.view_transaction_history() + "\n")
+            else:
+                fptr.write(result + "\n")
+
+        except (InsufficientFundsError, InvalidTransactionType) as e:
+            fptr.write(f"Error ({e.status_code}): {e.message}\n")
+
+        except Exception as e:
+            fptr.write(f"An unexpected error occurred: {e}\n")
+
+        no_of_transactions -= 1
