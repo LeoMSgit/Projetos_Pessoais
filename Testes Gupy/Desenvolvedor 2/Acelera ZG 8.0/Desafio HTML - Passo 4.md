@@ -7,6 +7,7 @@ Solução: Utilizar o site https://hoppscotch.io/
 
 Método: GET
 URL: https://desafio-endpoint-hashcode-n2.onrender.com/passo4
+
 Parâmetros:
 - cpf: 123.456.789-09
 - token: e7bf921482c40c7f1a82c7e99179ccbc468665db
