@@ -7,12 +7,13 @@ Solução: Utilizar o site https://hoppscotch.io/
 
 
 Corpo (JSON):
-'''json
+```json
 {
   "cpf": "123.456.789-09"
 }
-'''
+```
 Resultado:
+```
 {
   "status": 201,
   "mensage": "Parabéns, você concluiu o Passo 2!",
@@ -20,3 +21,4 @@ Resultado:
   "recomendations": "Envie no corpo da requisição seu cpf e a resposta da pergunta objetiva no seguinte formato: {cpf:xxx.xxx.xxx-xx, respostaQuestaoObjetiva: xxxxxxxx}, Atenção: a resposta da questão é pequena, sendo uma palavra ou um número informado como string",
   "objectiveQuestion": "PO5Q - Qual é o valor da variável resultado se resultado = 2^3 + 5?"
 }
+```
