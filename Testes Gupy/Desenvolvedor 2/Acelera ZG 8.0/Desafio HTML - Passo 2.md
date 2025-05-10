@@ -5,13 +5,13 @@ Endpoint: POST https://desafio-endpoint-hashcode-n2.onrender.com/passo2
 
 Solução: Utilizar o site https://hoppscotch.io/
 
-Corpo (JSON):
 
-json
+Corpo (JSON):
+'''json
 {
   "cpf": "123.456.789-09"
 }
-
+'''
 Resultado:
 {
   "status": 201,
