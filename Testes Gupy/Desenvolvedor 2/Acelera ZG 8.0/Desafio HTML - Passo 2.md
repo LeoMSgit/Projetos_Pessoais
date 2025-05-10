@@ -13,7 +13,7 @@ Corpo (JSON):
 }
 ```
 Resultado:
-```
+```json
 {
   "status": 201,
   "mensage": "Parabéns, você concluiu o Passo 2!",
