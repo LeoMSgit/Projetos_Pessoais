@@ -12,6 +12,7 @@ Parâmetros:
 - token: e7bf921482c40c7f1a82c7e99179ccbc468665db
 
 Resultado:
+```json
 {
   "status": 200,
   "mensage": "Parabéns, você concluiu o Passo 4!",
@@ -22,3 +23,4 @@ Resultado:
     "Pergunta3": "Sofia trocou metade dos calçados pela quantidade equivalente de camisas com estampa, ganhando mais uma de brinde. Ela então resolveu comer um dos abacaxis e trocar o resto dos presentes por doces, sendo que um calçado vale 3 doces e cada abacaxi vale 1 doce, com quantos doces e camisas com estampa ela ficou no final?"
   }
 }
+```
