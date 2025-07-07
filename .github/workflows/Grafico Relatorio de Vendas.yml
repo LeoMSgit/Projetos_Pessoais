@@ -1,4 +1,4 @@
-ame: Deploy to GitHub Pages
+name: Deploy Sales Report to GitHub Pages
 
 on:
   push:
@@ -10,11 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: |
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up deployment folder
+        run: |
           mkdir -p public
-          cp -r "Tests and Exercices/JavaScript/Grafico Relatorio de Vendas/"* public/
-      - uses: peaceiris/actions-gh-pages@v3
+          cp -R "Tests and Exercices/JavaScript/Grafico Relatorio de Vendas/." public/
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          keep_files: false
