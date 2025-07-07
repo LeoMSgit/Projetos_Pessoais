@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório de Vendas</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+  <h2>Relatório de Vendas</h2>
+
+  <label>Categoria:
+    <select id="categoria"></select>
+  </label>
+
+  <label>Produto:
+    <select id="produto"></select>
+  </label>
+
+  <label>Marca:
+    <select id="marca"></select>
+  </label>
+
+  <div id="grafico" style="width:100%; height:400px;"></div>
+
+  <script>
+    let dados = {};
+    const categoriaSelect = document.getElementById('categoria');
+    const produtoSelect = document.getElementById('produto');
+    const marcaSelect = document.getElementById('marca');
+
+    function preencherSelect(select, opcoes) {
+      select.innerHTML = '';
+      opcoes.forEach(opcao => {
+        const option = document.createElement('option');
+        option.value = opcao;
+        option.textContent = opcao;
+        select.appendChild(option);
+      });
+    }
+
+    function atualizarSelects() {
+      const categoria = categoriaSelect.value;
+      const produtos = Object.keys(dados[categoria]);
+      preencherSelect(produtoSelect, produtos);
+      atualizarMarcas();
+    }
+
+    function atualizarMarcas() {
+      const categoria = categoriaSelect.value;
+      const produto = produtoSelect.value;
+      const marcas = Object.keys(dados[categoria][produto]);
+      preencherSelect(marcaSelect, marcas);
+      atualizarGrafico();
+    }
+
+    function atualizarGrafico() {
+      const categoria = categoriaSelect.value;
+      const produto = produtoSelect.value;
+      const marca = marcaSelect.value;
+      const vendas = dados[categoria][produto][marca];
+
+      Highcharts.chart('grafico', {
+        title: { text: `Vendas Mensais de ${marca}` },
+        xAxis: {
+          categories: ['Janeiro', 'Fevereiro', 'Março', 'Abril']
+        },
+        yAxis: {
+          title: { text: 'Vendas' }
+        },
+        series: [{
+          name: 'Vendas',
+          data: vendas
+        }]
+      });
+    }
+
+    // Carregar JSON externo
+    fetch('Dados.json')
+      .then(response => response.json())
+      .then(json => {
+        dados = json;
+        preencherSelect(categoriaSelect, Object.keys(dados));
+        atualizarSelects();
+      })
+      .catch(error => {
+        console.error('Erro ao carregar dados:', error);
+      });
+
+    categoriaSelect.addEventListener('change', atualizarSelects);
+    produtoSelect.addEventListener('change', atualizarMarcas);
+    marcaSelect.addEventListener('change', atualizarGrafico);
+  </script>
+</body>
+</html>
