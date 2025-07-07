@@ -1,16 +1,22 @@
 def getMostVisited(n, sprints):
-    visits = [0] * (n + 1)  # 1-based indexing
+    difference = [0] * (n + 2)  # 1-based indexing with extra space to avoid index issues
     for i in range(len(sprints) - 1):
         start = sprints[i]
         end = sprints[i + 1]
         if start < end:
-            for marker in range(start, end + 1):
-                visits[marker] += 1
+            difference[start] += 1
+            difference[end + 1] -= 1
         else:
-            for marker in range(end, start + 1):
-                visits[marker] += 1
-    max_visits = max(visits[1:])  # Exclude index 0
+            difference[end] += 1
+            difference[start + 1] -= 1
+    max_visits = 0
+    result = 1
+    current_visits = 0
     for marker in range(1, n + 1):
-        if visits[marker] == max_visits:
-            return marker
-    return -1  # Should not happen as per problem constraints
+        current_visits += difference[marker]
+        if current_visits > max_visits:
+            max_visits = current_visits
+            result = marker
+        elif current_visits == max_visits and marker < result:
+            result = marker
+    return result
