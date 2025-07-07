@@ -1,0 +1,20 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: 
+      - 'Tests and Exercices/JavaScript/Grafico Relatorio de Vendas/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          mkdir -p public
+          cp -r "Tests and Exercices/JavaScript/Grafico Relatorio de Vendas/"* public/
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
