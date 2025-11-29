@@ -1,4 +1,10 @@
 import ast
+import operator as op
+import math
+
+
+# operadores permitidos
+ALLOWED_OPERATORS = {
 ast.Add: op.add,
 ast.Sub: op.sub,
 ast.Mult: op.mul,
@@ -12,7 +18,7 @@ ast.Mod: op.mod,
 def _eval(node):
 if isinstance(node, ast.Num): # <number>
 return node.n
-if isinstance(node, ast.Constant): # Python 3.8+
+if isinstance(node, ast.Constant):
 return node.value
 if isinstance(node, ast.BinOp):
 left = _eval(node.left)
@@ -61,8 +67,4 @@ expr = expression.lower().replace('raiz', 'sqrt').replace(',', '.')
 node = ast.parse(expr, mode='eval').body
 result = _eval(node)
 # tornar inteiro quando for inteiro
-if isinstance(result, float) and result.is_integer():
-result = int(result)
-return str(result)
-except Exception as e:
 return f'Erro ao calcular: {e}'
