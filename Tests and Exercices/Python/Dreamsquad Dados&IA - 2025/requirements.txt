@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+requests
+# SDK Strands Agents. Ajuste o nome do pacote caso seja diferente.
+strands-agents
