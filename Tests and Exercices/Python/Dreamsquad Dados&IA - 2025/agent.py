@@ -1,66 +1,39 @@
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 import os
-import re
-import subprocess
-import json
-from typing import Optional
+from dotenv import load_dotenv
 
 
-from tools import calculate
+load_dotenv()
 
 
-# tentativa de importar Strands Agents. Se disponivel, construimos o agente com a API do SDK.
+from agent import ChatAgent
+
+
+app = FastAPI()
+
+
+class ChatRequest(BaseModel):
+message: str
+
+
+class ChatResponse(BaseModel):
+response: str
+
+
+# instancia o agente uma vez ao iniciar o servidor
+agent = ChatAgent()
+
+
+@app.post("/chat", response_model=ChatResponse)
+async def chat_endpoint(payload: ChatRequest):
 try:
-from strands.agents import Agent as StrandsAgent, Tool as StrandsTool
-STRANDS_AVAILABLE = True
-except Exception:
-STRANDS_AVAILABLE = False
+resp = agent.handle_message(payload.message)
+return ChatResponse(response=resp)
+except Exception as e:
+raise HTTPException(status_code=500, detail=str(e))
 
 
-
-
-def _detect_math_question(text: str) -> Optional[str]:
-# padrao simples: se conter apenas numeros, operadores e funcoes sqrt/pow, considera calculo
-math_like = re.search(r"[0-9\)\(]+\s*([\+\-\*\/\%\^]|\*\*)\s*[0-9]", text)
-word_math = re.search(r"raiz|sqrt|calcule|quanto é|quanto e|quanto é|quanto sao|quanto são", text.lower())
-if math_like or word_math:
-return text
-return None
-
-
-
-
-class ChatAgent:
-def __init__(self):
-self.model = os.getenv('OLLAMA_MODEL', 'llama2')
-self.ollama_host = os.getenv('OLLAMA_HOST', 'http://localhost:11434')
-# se Strands estiver disponivel, instancia a tool
-if STRANDS_AVAILABLE:
-self._init_strands_agent()
-else:
-self._init_fallback_agent()
-
-
-def _init_strands_agent(self):
-# exemplo genérico: registra uma tool que chama a função calculate
-try:
-def tool_func(args):
-expr = args.get('expression') if isinstance(args, dict) else args
-return calculate(expr)
-
-
-calc_tool = StrandsTool(name='calculator', func=tool_func, description='Tool para calculos matematicos')
-self.agent = StrandsAgent(model=self.model, tools=[calc_tool])
-self.use_strands = True
-except Exception:
-# se falhar, fallback
-self._init_fallback_agent()
-
-
-def _init_fallback_agent(self):
-# fallback: agente leve que decide quando usar a tool e quando consultar Ollama via CLI
-self.use_strands = False
-
-
-def _call_ollama_cli(self, prompt: str) -> str:
-# tenta chamar o CLI do ollama se estiver no PATH
-return response
+if __name__ == "__main__":
+import uvicorn
+uvicorn.run("main:app", host=os.getenv("HOST", "127.0.0.1"), port=int(os.getenv("PORT", 8000)), reload=True)
